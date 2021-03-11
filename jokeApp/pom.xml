@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>guru.springframework.joke</groupId>
-    <artifactId>demo</artifactId>
+    <artifactId>jokeapp</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>demo</name>
+    <name>jokeapp</name>
     <description>Joke App for Spring Boot</description>
     <properties>
         <java.version>11</java.version>
@@ -30,6 +30,11 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>guru.springframework</groupId>
+            <artifactId>chuck-norris-for-actuator</artifactId>
+            <version>0.0.2</version>
         </dependency>
     </dependencies>
 
