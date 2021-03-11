@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 
 class SetterInjectedControllerTest {
     SetterInjectedController controller;
+
     @BeforeEach
     void setUp() {
         controller = new SetterInjectedController();

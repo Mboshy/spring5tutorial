@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 
 class ContructorInjectedControllerTest {
     ContructorInjectedController controller;
+
     @BeforeEach
     void setUp() {
         controller = new ContructorInjectedController(new ContructorGreetingService());
