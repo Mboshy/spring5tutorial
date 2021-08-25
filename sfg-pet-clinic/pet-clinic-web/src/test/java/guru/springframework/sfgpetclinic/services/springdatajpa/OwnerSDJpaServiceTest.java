@@ -43,8 +43,8 @@ class OwnerSDJpaServiceTest {
     @Test
     void findAll() {
         Set<Owner> returnOwnerSet = new HashSet<>();
-        returnOwnerSet.add(Owner.builder().id(1l).build);
-        returnOwnerSet.add(Owner.builder().id(2l).build);
+        returnOwnerSet.add(Owner.builder().id(1l).build());
+        returnOwnerSet.add(Owner.builder().id(2l).build());
 
         when(ownerRepository.findAll()).thenReturn(returnOwnerSet);
         Set<Owner> owners = service.findAll();
