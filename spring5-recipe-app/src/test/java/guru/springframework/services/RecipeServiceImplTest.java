@@ -16,6 +16,7 @@ import java.util.Optional;
 import java.util.Set;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThrows;
 import static org.mockito.Mockito.*;
 import static org.springframework.test.util.AssertionErrors.assertNotNull;
 
@@ -51,12 +52,14 @@ class RecipeServiceImplTest {
         verify(recipeRepository, never()).findAll();
     }
 
-    @Test
+    @Test()
     public void getRecipeByIdTestNotFound() throws Exception {
-        Optional<Recipe> recipeOptional = Optional.empty();
-        when(recipeRepository.findById(anyLong())).thenReturn(recipeOptional);
-        Recipe recipeReturned = recipeService.findById(1L);
-        assertNotNull("Null recipe returned", recipeReturned);
+        assertThrows(NotFoundException.class, () -> {
+            Optional<Recipe> recipeOptional = Optional.empty();
+            when(recipeRepository.findById(anyLong())).thenReturn(recipeOptional);
+            Recipe recipeReturned = recipeService.findById(1L);
+            assertNotNull("Null recipe returned", recipeReturned);
+        });
     }
 
     @Test
